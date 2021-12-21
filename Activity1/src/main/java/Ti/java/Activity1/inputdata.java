@@ -8,7 +8,9 @@ package Ti.java.Activity1;
 /*package java.ti.Activity1;*/
 
 
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 
 
 
@@ -22,5 +24,12 @@ public class inputdata {
     String nama_barang;
     String harga_kilo;
     String jumlah_beli;
+    
+    public void input(HttpServletRequest data, Model model)
+    {
+        nama_barang = data.getParameter("name");
+        harga_kilo = data.getParameter("cost");
+        jumlah_beli = data.getParameter("amount");
+    }
     
 }

@@ -23,9 +23,7 @@ public class Controlleractivity {
     @RequestMapping("/act")
     public String lihatdata(HttpServletRequest data, Model model){
     
-        iut.nama_barang = data.getParameter("name");
-        iut.harga_kilo = data.getParameter("cost");
-        iut.jumlah_beli = data.getParameter("amount");
+        iut.input(data, model);
         
         int product_cost = pc.early_cost(iut.harga_kilo, iut.jumlah_beli);
         
