@@ -20,7 +20,7 @@ public class Proses {
     
     int cost;
     public int early_cost(String a, String b){
-        int harga_awal;
+        int harga_awal = 0;
         
         int inta = Integer.parseInt(a);
         int intb = Integer.parseInt(b);
@@ -30,17 +30,17 @@ public class Proses {
         return harga_awal;
     }
     
-    public int diskon(){
-        int dis;
+    public String diskon(){
+        String dis;
         
         if (cost <= 16000){
-            dis = 0 / 100;
+            dis = "0%";
         }
         else if( cost > 16000 && cost <= 25000){
-            dis = 10 / 100;
+            dis = "10%";
         }
         else {
-            dis = 15 /100;
+            dis = "15%";
         }
         return dis;
     }
@@ -48,16 +48,24 @@ public class Proses {
     public int harga_diskon(){
         int dis_pri;
         
-        dis_pri = cost * diskon();
+        if (cost <= 16000){
+            dis_pri = cost * 0 / 100;
+        }
+        else if( cost > 16000 && cost <= 25000){
+            dis_pri = cost * 10 / 100;
+        }
+        else {
+            dis_pri = cost * 15 / 100;
+        }
         
         return dis_pri;
     }
     
     public int harga_total(){
-        int total_pri;
+        int total_pri = 0;
         
         total_pri = cost - harga_diskon();
         
         return total_pri;
-    }    
+    }
 }

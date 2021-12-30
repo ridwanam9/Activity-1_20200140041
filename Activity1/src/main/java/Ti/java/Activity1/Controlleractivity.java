@@ -5,6 +5,7 @@
  */
 package Ti.java.Activity1;
 
+
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,13 +19,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Controlleractivity {
     
     Proses pc = new Proses();
-    inputdata iut = new inputdata();
+    Inputdata iut = new Inputdata();
     
     @RequestMapping("/act")
     public String lihatdata(HttpServletRequest data, Model model){
     
         iut.input(data, model);
-        
+       
         int product_cost = pc.early_cost(iut.harga_kilo, iut.jumlah_beli);
         
         model.addAttribute("name", iut.nama_barang);
@@ -36,7 +37,7 @@ public class Controlleractivity {
         model.addAttribute("harga_total", pc.harga_total());
         
         
-        return "Ridwan";
+        return "RidwanAmirulMaulana";
     }
     
 }
