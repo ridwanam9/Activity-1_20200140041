@@ -17,12 +17,15 @@ public class Inputdata {
     String nama_barang;
     String harga_kilo;
     String jumlah_beli;
+    String harga_customer;
     
     public void masukan(HttpServletRequest data, Model model){
     
         nama_barang = data.getParameter("var_name");
         harga_kilo = data.getParameter("var_cost");
         jumlah_beli = data.getParameter("var_amount");
+        harga_customer = data.getParameter("var_customer");
+        
     
     }
     

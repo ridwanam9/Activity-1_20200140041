@@ -10,7 +10,7 @@ package Java.TI.Activity_1;
  * @author DELL
  */
 public class Proses {
-    
+        
     int cost;
     public int early_cost(String a, String b){
         int harga_awal = 0;
@@ -62,4 +62,22 @@ public class Proses {
         return total_pri;
     }
     
+    public String kembalian(String c){
+        
+        String keterangan;
+        int kembali;
+        int intc = Integer.parseInt(c);
+        
+        if(intc < harga_total()){
+            keterangan = "Uang Anda tidak Cukup";
+        }
+        else if(intc == harga_total()){
+            keterangan = "Uang Anda sudah Pas";
+        }
+        else{
+            kembali = intc - harga_total();
+            keterangan = "Uang kembalian Anda = Rp."+kembali;
+        }
+        return keterangan;
+    }
 }

@@ -26,17 +26,19 @@ public class ControllerAct {
         it.masukan(data, model);
 
         int product_cost = pr.early_cost(it.harga_kilo, it.jumlah_beli);
+        String back = pr.kembalian(it.harga_customer);
         
         model.addAttribute("name", it.nama_barang);
         model.addAttribute("cost", it.harga_kilo);
         model.addAttribute("amount", it.jumlah_beli);
+        model.addAttribute("uang_anda", it.harga_customer);
         model.addAttribute("awal", product_cost);
         model.addAttribute("diskon", pr.diskon());
         model.addAttribute("harga_diskon", pr.harga_diskon());
         model.addAttribute("harga_total", pr.harga_total());
+        model.addAttribute("kembali", back);
         
-        
-        return "Ridwan";
+        return "RidwanAmirulMaulana";
     }
     
 }
